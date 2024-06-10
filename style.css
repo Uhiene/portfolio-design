@@ -1,0 +1,269 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+}
+
+:root {
+    --blue-color: #3030EB;
+    --pink-color: #D31F89;
+    --white-color: #FFFFFF;
+    --black-color: #000000;
+    --grey-color: #999999;
+    --gradient: linear-gradient(to right, var(--blue-color), var(--pink-color));
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.gradient-text {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-top: 0;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--white-color);
+    padding: 20px 100px;
+    color: var(--white-color);
+    position: relative;
+}
+
+.logo {
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: var(--grey-color);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* Profile Hero Section */
+.hero-section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+    gap: 100px;
+}
+
+aside {
+    width: 400px;
+}
+
+.skill {
+    background: var(--gradient);
+    color: var(--white-color);
+    width: fit-content;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: small;
+    text-transform: uppercase;
+}
+
+.caption {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--grey-color);
+    margin: 20px 0;
+}
+
+.heading {
+    font-size: 50px;
+}
+
+.btn {
+    width: 100px;
+    padding: 16px;
+    border-radius: 5px;
+    font-size: small;
+    margin-top: 20px;
+    transition: transform 0.3s ease-in;
+}
+
+.btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    /* Moves the button up by 5px and scales it up by 5% */
+}
+
+.blue-btn {
+    background-color: var(--blue-color);
+    color: var(--white-color);
+    border: none;
+    margin-right: 20px;
+}
+
+.white-btn {
+    background: var(--white-color);
+    border: 1px solid var(--black-color);
+}
+
+/* Main Content Area */
+main {
+    position: relative;
+}
+
+.content {
+    position: relative;
+    width: 350px;
+    height: 400px;
+}
+
+img {
+    display: block;
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.bg-profile {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 350px;
+    height: 90%;
+    border-radius: 50px;
+    background: linear-gradient(to bottom, var(--blue-color), var(--pink-color));
+    z-index: 0;
+}
+
+/* Dots for Visual Interest */
+.dot {
+    position: absolute;
+    height: auto;
+}
+
+.dot-4 {
+    top: 20%;
+    left: 50%;
+}
+
+.dot-3 {
+    right: 50%;
+    bottom: 10%;
+}
+
+.dot-2 {
+    top: 10%;
+    left: 65%;
+}
+
+.dot-1 {
+    right: 65%;
+    bottom: 10%;
+}
+
+.hamburger {
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+    /* Hide by default */
+}
+
+/* Tablet View Styles */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 20px;
+    }
+
+    .hamburger {
+        display: block;
+        /* Show the hamburger icon on smaller screens */
+    }
+
+    .menu {
+        display: none;
+        /* Hide menu on small screens */
+    }
+
+    .menu li {
+        margin-bottom: 10px;
+    }
+
+    .menu.active {
+        display: flex;
+        /* Show the menu when the hamburger is clicked */
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        top: 50px;
+        left: 0;
+        background-color: var(--white-color);
+        padding: 20px;
+        border-top: 2px solid var(--blue-color);
+        z-index: 10;
+        text-align: center;
+    }
+
+    .hero-section {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 40px;
+        padding: 20px;
+    }
+
+    aside {
+        text-align: center;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .skill {
+        margin: 0 auto;
+    }
+
+    .caption {
+        margin: 10px 0;
+    }
+}
+
+/* Mobile View Styles */
+@media (max-width: 437px) {
+    .heading {
+        font-size: 26px;
+    }
+
+    .hero-section {
+        overflow: hidden;
+    }
+
+    .content {
+        width: 250px;
+        height: 300px;
+    }
+
+    .bg-profile {
+        width: 250px;
+        margin: 0 auto;
+    }
+
+    img {
+        width: 200px;
+        height: 300px;
+    }
+}
